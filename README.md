@@ -36,10 +36,6 @@ ex) Espresso, UIAutomator, Robotium, Calabash, Robolectric
 -안드로이드 프레임워크 종속 항목이 없거나 모의로 구현할 수 있는 데이터 및 동작에 대해 단위 테스트를 작성
 -로컬 JVM 에서 실행할 수 있는 테스트
 
-
-
-
-
 3.3 Annotation 종류
 @Before : @Test 시작하기 전 사전에 진행해야 할 동작. @Test가 시작되기 전 항상 호출됨(단위 테스트 포함)
 @Test : @Before 가 완료되면 실제 코드 테스트를 진행
@@ -47,11 +43,7 @@ ex) Espresso, UIAutomator, Robotium, Calabash, Robolectric
 @Test(expected=RuntimeException.class) : 테스트 메서드가 RuntimeException 이 발생해야 성공, 그렇지 않으면 실패
 @After : 모든 테스트가 종료되면 호출됨. 메모리에서 resource 를 release 할 수 있음
 @Rule : 해당 Test class 에서 사용하게 될 ActivityTestRule 과 ServiceTestRule 에 대해 정의
-
-
 @BeforeClass, @AfterClass : public static method 로 정의하여야 하며, @Before, @After 와 동일하게 해당 테스트 클래스에서 한 번씩만 실행됨
-
-
 @RequiresDevice : 에뮬레이터를 사용하지 않고 기기만 사용
 @SdkSupress : minSdkVersion을 지정
 @SmallTest, @MediumTest, @LargeTest : 테스트 성격을 구분하여 테스트
@@ -59,9 +51,19 @@ ex) Espresso, UIAutomator, Robotium, Calabash, Robolectric
 
 3.4 단정문 종류
 assertArrayEquals(a,b) : 배열 a와 b가 일치함을 확인
-assertEquals(a,b) : 객체 a 와 b의 값이 같은지 확인
-assertSame(a,b) : 객체 a 와 b가 같은 객체인지 확인
+assertEquals(a,b) : 객체 a 와 b의 "값이 같은지" 확인
+assertSame(a,b) : 객체 a 와 b가 "같은 객체인지" 확인
 assertNotNull(a) : a 객체가 null 이 아님을 확인
+
+
+4. Mockito
+-Test Double 중 하나
+cf. Mock : 호출에 대한 기대를 명세하고, 해당 내용에 따라 동작하도록 프로그래밍 된 객체
+
+4.1 Test Double
+https://brunch.co.kr/@tilltue/55
+
+
 
 
 
@@ -78,10 +80,6 @@ https://velog.io/@haero_kim/Android-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%BD%94%EB%93%
 
 
 
-
-
-
-
 앱 테스트
 https://developer.android.com/studio/test
 
@@ -92,3 +90,5 @@ https://thdev.tech/androiddev/2016/05/04/Android-Test-Example/
 JUnit 단정문 문서
 https://junit.sourceforge.net/javadoc/org/junit/Assert.html
 
+Mockito-inline version
+https://search.maven.org/artifact/org.mockito/mockito-inline

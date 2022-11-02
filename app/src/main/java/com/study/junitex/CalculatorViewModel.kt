@@ -17,31 +17,32 @@ class CalculatorViewModel(private val calculator: Calculator): ViewModel() {
         get() = _circumference
     private var _circumference = MutableLiveData<String>()
 
-    fun calculate() {
+    fun calculate(rad: Double) {
         try {
+            radius.value = rad.toString()
             val radiusDoubleValue = radius.value?.toDouble()
             if (radiusDoubleValue != null) {
                 calculateArea(radiusDoubleValue)
                 calculateCircumference(radiusDoubleValue)
+                //Log.i("MYTAG", "1111")
             } else {
+                //Log.i("MYTAG", "2222")
                 _area.value = null
                 _circumference.value = null
             }
-
         } catch (e: Exception) {
-            Log.i("MYTAG", e.message.toString())
             _area.value = null
             _circumference.value = null
         }
     }
 
-    fun calculateArea(radius: Double) {
-        val calculatedArea = calculator.calculateArea(radius)
+    fun calculateArea(rad: Double) {
+        val calculatedArea = calculator.calculateArea(rad)
         _area.value = calculatedArea.toString()
     }
 
-    fun calculateCircumference(radius: Double) {
-        val calculatedCircumference = calculator.calculateCircumference(radius)
+    fun calculateCircumference(rad: Double) {
+        val calculatedCircumference = calculator.calculateCircumference(rad)
         _circumference.value = calculatedCircumference.toString()
     }
 }
