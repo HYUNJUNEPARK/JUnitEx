@@ -46,15 +46,12 @@ class CalculatorTest {
     fun calculateCircumference_zeroRadius_returnsCorrectResult(){
         val result = calculator?.calculateCircumference(0.0)
         assertEquals(0.0, result)
-
     }
-
 
     @Test
     fun calculateArea_radiusGiven_returnsCorrectResult(){
         val result = calculator?.calculateArea(2.1)
         assertEquals(13.8474, result)
-
     }
 
     @Test
