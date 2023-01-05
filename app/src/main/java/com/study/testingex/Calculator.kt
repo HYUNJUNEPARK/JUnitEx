@@ -1,4 +1,4 @@
-package com.study.junitex
+package com.study.testingex
 
 class Calculator {
     private val pi = 3.14

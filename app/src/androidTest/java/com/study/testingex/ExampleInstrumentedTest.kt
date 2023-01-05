@@ -1,4 +1,4 @@
-package com.study.junitex
+package com.study.testingex
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

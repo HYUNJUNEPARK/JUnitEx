@@ -1,4 +1,4 @@
-package com.study.junitex
+package com.study.testingex
 
 import org.junit.Test
 import org.junit.Assert.*

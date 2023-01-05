@@ -1,4 +1,4 @@
-package com.study.junitex
+package com.study.testingex
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import org.junit.Assert.assertEquals
@@ -45,13 +45,9 @@ class CalculatorViewModelUnitTest {
     fun testCalculate() {
         calculatorViewModel.calculate(2.1)
 
-        val area = calculatorViewModel.area.value
-        val radius = calculatorViewModel.radius.value
-        val circumference = calculatorViewModel.circumference.value
-
-        assertNotNull(area)
-        assertNotNull(radius)
-        assertNotNull(circumference)
+        assertNotNull(calculatorViewModel.area.value)
+        assertNotNull(calculatorViewModel.radius.value)
+        assertNotNull(calculatorViewModel.circumference.value)
     }
 
     @Test

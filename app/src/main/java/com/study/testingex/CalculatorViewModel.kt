@@ -1,4 +1,4 @@
-package com.study.junitex
+package com.study.testingex
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
