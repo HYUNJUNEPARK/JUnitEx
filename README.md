@@ -43,6 +43,24 @@ cf.Mockito, PowerMock
 -assertSame(a,b) : 객체 a 와 b가 같은 객체인지 확인
 -assertNotNull(a) : a 객체가 null 이 아님을 확인
 
+```kotlin
+//테스트 코드 : Given - When - Then 패턴 예시
+@Test
+fun calculateArea_radiusGiven_setAreaLiveData_returnPassedResult() {
+ //Given : 테스트를 준비하는 과정. 테스트에 사용하는 변수, 입력 값 등을 정의하거나 Mock 객체를 정의하는 구문 등이 포함된다.
+ val radius = 2.1
+ val expectedArea = "13.8474"
+
+ //When : 실제로 테스트를 실행하는 과정.
+ calculatorViewModel.calculateArea(radius)
+
+ //Then : 테스트를 검증하는 과정.
+ val actualArea = calculatorViewModel.area.value
+ assertEquals(expectedArea, actualArea)
+}
+```
+
+
 ---
 
 2.Espresso
@@ -67,9 +85,6 @@ https://youngest-programming.tistory.com/492
 
 Android UnitTest, JUnit을 이용한 유닛 테스트
 https://www.crocus.co.kr/1544
-
-안드로이드 테스트 코드 작성해보기
-https://velog.io/@haero_kim/Android-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%BD%94%EB%93%9C-%EC%9E%91%EC%84%B1%ED%95%B4%EB%B3%B4%EA%B8%B0
 
 앱 테스트
 https://developer.android.com/studio/test

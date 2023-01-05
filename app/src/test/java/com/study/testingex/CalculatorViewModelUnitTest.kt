@@ -42,25 +42,44 @@ class CalculatorViewModelUnitTest {
     }
 
     @Test
-    fun testCalculate() {
-        calculatorViewModel.calculate(2.1)
+    fun calculate_radiusGiven_setThreeLiveData_returnPassedResult() {
+        //Given
+        val radius = 2.1
 
+        //When
+        calculatorViewModel.calculate(radius)
+
+        //Then
         assertNotNull(calculatorViewModel.area.value)
         assertNotNull(calculatorViewModel.radius.value)
         assertNotNull(calculatorViewModel.circumference.value)
     }
 
     @Test
-    fun testCalculateArea() {
-        calculatorViewModel.calculateArea(2.1)
-        val area = calculatorViewModel.area.value
-        assertEquals("13.8474", area)
+    fun calculateArea_radiusGiven_setAreaLiveData_returnPassedResult() {
+        //Given
+        val radius = 2.1
+        val expectedArea = "13.8474"
+
+        //When
+        calculatorViewModel.calculateArea(radius)
+
+        //Then
+        val actualArea = calculatorViewModel.area.value
+        assertEquals(expectedArea, actualArea)
     }
 
     @Test
-    fun calculateCircumference() {
-        calculatorViewModel.calculateCircumference(1.0)
-        val circumference = calculatorViewModel.circumference.value
-        assertEquals("6.281", circumference)
+    fun calculateCircumference_radiusGiven_setCircumferenceLiveData_returnFailedResult() {
+        //Given
+        val radius = 1.0
+        val expectedCircumference = "6.281"
+
+        //When
+        calculatorViewModel.calculateCircumference(radius)
+
+        //Then
+        val actualCircumference = calculatorViewModel.circumference.value
+        assertEquals(expectedCircumference, actualCircumference)
     }
 }
